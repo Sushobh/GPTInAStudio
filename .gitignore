@@ -22,5 +22,5 @@ gradlew
 gradlew.bat
 gradle/*
 keystore/*
-
+src/main/kotlin/com/sushobh/gptinstudio/Constants.kt
 *.ap

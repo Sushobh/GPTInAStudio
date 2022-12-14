@@ -17,8 +17,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.2.0'
-    implementation 'org.zeroturnaround:zt-exec:1.11'
+    implementation 'com.theokanning.openai-gpt3-java:client:0.8.1'
 }
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
@@ -33,7 +32,7 @@ intellij {
     type = 'IC'
 
     // Require the Android plugin (Gradle will choose the correct version):
-    plugins = ['android']
+    plugins = ['android','java']
 }
 
 runIde {

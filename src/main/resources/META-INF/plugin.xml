@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>org.sushobh.Chainsaw</id>
-    <name>Chainsaw</name>
+    <id>org.sushobh.gptinstudio</id>
+    <name>GPTInStudio</name>
     <vendor email="sushobh.nadiger@gmail.com" url="http://www.sushobh.com">Sushobh</vendor>
 
     <description>Displays activity and fragment list while connected to device</description>
@@ -10,7 +10,15 @@
     <depends>com.intellij.modules.platform</depends>
     <depends>org.jetbrains.android</depends>
 
-
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService
+                serviceImplementation="com.sushobh.gptinstudio.repo.AppSettingsState"/>
+        <applicationConfigurable
+                parentId="tools"
+                instance="com.sushobh.gptinstudio.AppSettingsConfigurable"
+                id="com.example.ApplicationSettingsConfigurable"
+                displayName="My Application Settings"/>
+    </extensions>
 
     <actions>
         <group
@@ -22,9 +30,16 @@
                     anchor="first"/>
             <action
                     class="com.sushobh.gptinstudio.GPTWriteTestAction"
-                    id="org.intellij.sdk.action.GroupPopDialogAction"
+                    id="com.sushobh.gptinstudio.GPTWriteTestAction"
                     text="Let GPT Write a Test"
                     description="Displays a dialog with GPT Related test">
+
+            </action>
+            <action
+                    class="com.sushobh.gptinstudio.GPTAnalyseCodeAction"
+                    id="com.sushobh.gptinstudio.GPTAnalyseCodeAction"
+                    text="Let GPT Analyse Code"
+                    description="Displays a dialog with GPT Related code analsyis">
             </action>
         </group>
     </actions>
