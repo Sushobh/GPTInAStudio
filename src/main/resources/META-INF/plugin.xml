@@ -1,0 +1,31 @@
+<idea-plugin>
+    <id>org.sushobh.Chainsaw</id>
+    <name>Chainsaw</name>
+    <vendor email="sushobh.nadiger@gmail.com" url="http://www.sushobh.com">Sushobh</vendor>
+
+    <description>Displays activity and fragment list while connected to device</description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+
+
+
+    <actions>
+        <group
+                id="org.sushobh.gptactions"
+                text="GPT Actions"
+                popup="true">
+            <add-to-group
+                    group-id="EditorPopupMenu"
+                    anchor="first"/>
+            <action
+                    class="com.sushobh.gptinstudio.GPTWriteTestAction"
+                    id="org.intellij.sdk.action.GroupPopDialogAction"
+                    text="Let GPT Write a Test"
+                    description="Displays a dialog with GPT Related test">
+            </action>
+        </group>
+    </actions>
+</idea-plugin>
