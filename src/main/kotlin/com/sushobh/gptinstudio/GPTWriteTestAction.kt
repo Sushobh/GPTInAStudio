@@ -15,12 +15,19 @@ class GPTWriteTestAction : AnAction() {
         if(psiElement.elementType?.debugName.equals("FUN")){
             if(psiElement is KtNamedFunction){
                 e.project?.let {
-                    val code = OpenAIRepo.writeTestCase(psiElement.text)
-                    val dialog = KotlinCodeDialog(
-                        code,
-                        "Generated test for ${psiElement.name.orEmpty()}",
-                        it)
-                    dialog.show()
+                    OpenAIRepo.writeTestCase(psiElement.text,it, object : OpenAIRepo.Callback<String>{
+                        override fun onSuccess(data: String) {
+                            val dialog = KotlinCodeDialog(
+                                data,
+                                "Generated test for ${psiElement.name.orEmpty()}",
+                                it)
+                            dialog.show()
+                        }
+                        override fun onFailure() {
+
+                        }
+                    })
+
                 }
             }
         }

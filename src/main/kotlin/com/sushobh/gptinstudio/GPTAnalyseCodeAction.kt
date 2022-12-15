@@ -18,11 +18,18 @@ class GPTAnalyseCodeAction : AnAction() {
         if(psiElement.elementType?.debugName.equals("FUN")){
             if(psiElement is KtNamedFunction){
                 e.project?.let {
-                    val analysis = OpenAIRepo.analzeCodeAndReturnFindings(psiElement.text)
-                    val displayConfig = CodeDisplayConfiguration(displayDimenstion = Dimension(500,500),
-                        risizable = false,title = "Code analysis for ${psiElement.name}")
-                    val dialog = TextDisplayDialog(displayConfig,analysis,it)
-                    dialog.show()
+
+                    OpenAIRepo.analzeCodeAndReturnFindings(psiElement.text,it, object : OpenAIRepo.Callback<String>{
+                        override fun onSuccess(data: String) {
+                            val displayConfig = CodeDisplayConfiguration(displayDimenstion = Dimension(500,500),
+                                risizable = false,title = "Code analysis for ${psiElement.name}")
+                            val dialog = TextDisplayDialog(displayConfig,data,it)
+                            dialog.show()
+                        }
+                        override fun onFailure() {
+
+                        }
+                    })
                 }
             }
         }
