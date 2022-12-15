@@ -16,8 +16,11 @@
         <applicationConfigurable
                 parentId="tools"
                 instance="com.sushobh.gptinstudio.AppSettingsConfigurable"
-                id="com.example.ApplicationSettingsConfigurable"
-                displayName="My Application Settings"/>
+                id="org.sushobh.gptinstudio.ApplicationSettingsConfigurable"
+                displayName="GPTInStudio Settings"/>
+        <notificationGroup id="org.sushobh.gptinstudio.apierrors"
+                           displayType="BALLOON"
+                           key="GPTInStudio_errornotifcation_group"/>
     </extensions>
 
     <actions>
