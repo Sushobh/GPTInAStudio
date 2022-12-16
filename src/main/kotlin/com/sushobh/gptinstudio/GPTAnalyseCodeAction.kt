@@ -7,7 +7,6 @@ import com.intellij.psi.util.elementType
 import com.sushobh.gptinstudio.repo.OpenAIRepo
 import com.sushobh.gptinstudio.ui.CodeDisplayConfiguration
 import com.sushobh.gptinstudio.ui.ErrorNotifier
-import com.sushobh.gptinstudio.ui.KotlinCodeDialog
 import com.sushobh.gptinstudio.ui.TextDisplayDialog
 import org.jetbrains.kotlin.psi.KtNamedFunction
 import java.awt.Dimension
@@ -17,7 +16,7 @@ class GPTAnalyseCodeAction : AnAction() {
     override fun actionPerformed(e: AnActionEvent) {
         val psiElement = e.getData(LangDataKeys.PSI_ELEMENT)
         val project = e.project!!
-        if(!psiElement.isAKtFunction()){
+        if(!psiElement.isAKtFunctionDeclaration()){
             ErrorNotifier.incompatibleApiCallError(project)
             return
         }
