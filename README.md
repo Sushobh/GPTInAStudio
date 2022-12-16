@@ -12,10 +12,11 @@ https://user-images.githubusercontent.com/20350751/208074849-208f2182-9219-47de-
 [GPTInStudio-1.0-SNAPSHOT.zip](https://github.com/Sushobh/GPTInAStudio/files/10244814/GPTInStudio-1.0-SNAPSHOT.zip)
 
 Download and install this plugin in Android Studio, verified to work with the latest Android Studio versions.
+
 Settings -> Plugins -> Click on settings icon at the top -> Install plugin from disk
 
-### Set up token
-Settings -> Tools -> GPTInStudio Settings  Add your GPT Token.
+### Enter your GPT token
+Settings -> Tools -> GPTInStudio Settings
 
 Then right click on function name and use.
 
