@@ -1,4 +1,4 @@
-# GPTInAStudio
+# GPTInAStudio (Just for fun). 
 
 GPT Api integration with Android Studio i.e. a plugin.
 
